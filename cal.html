@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* css */
+    body{
+        background-color: rgb(174, 217, 217);
+    }
+    .cal{
+        text-align: center;
+        margin-top: 20rem;
+    }
+</style>
+<body>
+    <!-- simple calculator -->
+    <div class="cal">
+        <h1>Simple calculator</h1>
+    <input type="text" id="text1">
+    <select id="select">
+        <option href="#">+</option>
+        <option href="#">-</option>
+        <option href="#">/</option>
+        <option href="#">*</option>
+    </select>
+    <input type="text" id="text2">
+    <button id="equals" onclick="calculator()">=</button>
+    <input type="text" id="result">
+    </div>
+
+    <!-- js -->
+    <script>
+        // function
+        function calculator() {
+            let  text1 = parseFloat(document.getElementById("text1").value);
+            let  text2 = parseFloat(document.getElementById("text2").value);
+            let select = document.getElementById("select").value;
+            let result;
+            // here give conditions
+            if (select == "+" ) {
+                result = text1 + text2;
+                
+            } else if (select=="-") {
+                result = text1 - text2;
+            } else if (select=="/") {
+                result = text1 / text2;
+            } else if (select=="*") {
+                result = text1 * text2;
+            }
+            // display result
+          document.getElementById("result").value = result;    
+        }
+    </script>
+
+</body>
+</html>
